@@ -1,0 +1,26 @@
+{
+  "name": "projeto-3-final---api-restful-mod-3",
+  "version": "1.0.0",
+  "description": "Projeto final do módulo 3 da Blue Edtech, criação de uma API Restfull com tema livre.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsr2k2/Projeto-3-FINAL---API-RESTful-Mod-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsr2k2/Projeto-3-FINAL---API-RESTful-Mod-3/issues"
+  },
+  "homepage": "https://github.com/wsr2k2/Projeto-3-FINAL---API-RESTful-Mod-3#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  }
+}
