@@ -1,8 +1,8 @@
-const Russian = require('../models/russian');
+const Mexican = require('../models/mexican');
 
 exports.getAll = async (req,res) => {
-    await Russian.find({}).then((russians) => {
-        res.status(200).json(russians);
+    await Mexican.find({}).then((mexicans) => {
+        res.status(200).json(mexicans);
     }).catch((err) => {
         res.status(404).json({message: "Nenhum prato foi encontrado!"});
     });
@@ -13,8 +13,8 @@ exports.getSingle = async (req, res) => {
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
     }
-    await Russian.findById(req.params.id).then((russians) => {
-        res.status(200).json(russians);
+    await Mexican.findById(req.params.id).then((mexican) => {
+        res.status(200).json(mexican);
     }).catch((err) => {
         res.status(404).json({message: "Nenhum prato foi localizado, tente um ID válido!"});
     });
@@ -41,7 +41,7 @@ exports.postCreate = async (req,res) => {
         res.status(400).json({message: "A URL da imagem deve ser preenchida!"});
         return;
     }
-    await Russian.create(req.body).then(() => {
+    await Mexican.create(req.body).then(() => {
         res.status(201).json({message: `Prato: ${req.body.nome}, criado com sucesso!`});
     }).catch((err) => {
         res.status(400).json({message: "Não foi possível realizar seu cadastro."});
@@ -73,7 +73,7 @@ exports.putUpdate = async (req,res) => {
         res.status(400).json({message: "A URL da imagem deve ser preenchida!"});
         return;
     }
-    await Russian.findByIdAndUpdate(req.params.id, req.body).then(() => {
+    await Mexican.findByIdAndUpdate(req.params.id, req.body).then(() => {
         res.status(201).json({message: `Prato: ${req.body.nome}, atualizado com sucesso!`});
     }).catch((err) => {
         res.status(400).json({message: "Não foi possível realizar sua atualização."});
@@ -85,7 +85,7 @@ exports.delDelete = async (req,res) => {
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
     }
-    await Russian.findByIdAndDelete(req.params.id).then(() => {
+    await Mexican.findByIdAndDelete(req.params.id).then(() => {
         res.status(200).json({message: `Prato deletado com sucesso!`});
     }).catch((err) => {
         res.status(400).json({message: "Não foi possível localizar o prato, digite um ID válido!"});

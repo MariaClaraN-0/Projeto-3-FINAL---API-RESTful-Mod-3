@@ -86,7 +86,7 @@ exports.delDelete = async (req,res) => {
         return true;
     }
     await Italian.findByIdAndDelete(req.params.id).then(() => {
-        res.status(200).json({message: `Prato: ${req.body.nome}, deletado com sucesso!`});
+        res.status(200).json({message: `Prato deletado com sucesso!`});
     }).catch((err) => {
         res.status(400).json({message: "Não foi possível localizar o prato, digite um ID válido!"});
     });
