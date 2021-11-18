@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
 const ItalianRouter = require('./routers/italian.routes');
 app.use('/italian', ItalianRouter);
 
+const RussianRouter = require('./routers/russian.routes');
+app.use('/russian', RussianRouter);
+
 app.listen(process.env.PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
 });

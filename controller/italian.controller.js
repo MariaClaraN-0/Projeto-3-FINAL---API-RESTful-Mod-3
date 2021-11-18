@@ -1,4 +1,4 @@
-const Italian = require('../models/italians');
+const Italian = require('../models/italian');
 
 exports.getAll = async (req,res) => {
     await Italian.find({}).then((italians) => {
@@ -9,12 +9,12 @@ exports.getAll = async (req,res) => {
 };
 
 exports.getSingle = async (req, res) => {
-    if(IdleDeadline.length != 24){
+    if(req.params.id.length != 24){
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
     }
-    await Italian.findById(req.params.id).then((italians) => {
-        res.status(200).json(italians);
+    await Italian.findById(req.params.id).then((italian) => {
+        res.status(200).json(italian);
     }).catch((err) => {
         res.status(404).json({message: "Nenhum prato foi localizado, tente um ID válido!"});
     });
@@ -49,7 +49,7 @@ exports.postCreate = async (req,res) => {
 };
 
 exports.putUpdate = async (req,res) => {
-    if(id.length != 24){
+    if(req.params.id.length != 24){
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
     }
@@ -81,7 +81,7 @@ exports.putUpdate = async (req,res) => {
 };
 
 exports.delDelete = async (req,res) => {
-    if(id.length != 24){
+    if(req.params.id.length != 24){
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
     }
