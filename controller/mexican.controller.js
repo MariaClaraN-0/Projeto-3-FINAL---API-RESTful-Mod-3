@@ -1,6 +1,6 @@
 const Mexican = require('../models/mexican');
 
-exports.getAll = async (req,res) => {
+exports.getlistAll = async (req,res) => {
     await Mexican.find({}).then((mexicans) => {
         res.status(200).json(mexicans);
     }).catch((err) => {
@@ -8,7 +8,7 @@ exports.getAll = async (req,res) => {
     });
 };
 
-exports.getSingle = async (req, res) => {
+exports.getlistId = async (req, res) => {
     if(req.params.id.length != 24){
         res.status(400).json({message: "Erro: o ID precisa ter 24 caracteres, insira um ID válido!"});
         return true;
@@ -20,7 +20,7 @@ exports.getSingle = async (req, res) => {
     });
 };
 
-exports.postCreate = async (req,res) => {
+exports.postAdd = async (req,res) => {
     if(!req.body.nome){
         res.status(400).json({message: "O nome do prato deve ser preenchido!"});
         return;

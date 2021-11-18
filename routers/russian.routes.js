@@ -7,11 +7,11 @@ router.get('/', (req,res) => {
     res.status(200).json({message:"Rota comidas russas ok"});
 });
 
-router.get("/readAll", RussianController.getAll);
+router.get("/listAll", RussianController.getlistAll);
 
-router.get("/readSingle/:id", RussianController.getSingle);
+router.get("/listId/:id", RussianController.getlistId);
 
-router.post("/create", RussianController.postCreate);
+router.post("/add", RussianController.postAdd);
 
 router.put("/update/:id", RussianController.putUpdate);
 
